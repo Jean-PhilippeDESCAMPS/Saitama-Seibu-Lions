@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="gameDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="gameId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score1Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score1Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score2Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score2Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score3Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score3Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score4Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score4Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score5Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score5Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score6Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score6Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score7Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score7Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score8Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score8Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score9Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score9Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score10Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score10Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score11Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score11Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score12Extern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="score12Home" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreEExtern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreEHome" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreHExtern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreHHome" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreRExtern" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="scoreRHome" optional="YES" attributeType="String" minValueString="0" syncable="YES"/>
+        <attribute name="stade" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="externTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="gameExtern" inverseEntity="Team" syncable="YES"/>
+        <relationship name="homeTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="gameHome" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="batterHand" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="birthDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poids" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="taille" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="throwHand" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="player" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="gameExtern" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="externTeam" inverseEntity="Game" syncable="YES"/>
+        <relationship name="gameHome" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="homeTeam" inverseEntity="Game" syncable="YES"/>
+        <relationship name="player" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="-36" positionY="81" width="128" height="585"/>
+        <element name="Player" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="Team" positionX="-54" positionY="63" width="128" height="133"/>
+    </elements>
+</model>
